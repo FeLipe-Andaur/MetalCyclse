@@ -9,16 +9,35 @@ h2 {
     color: #000000;
 }
 
+nav {
+
+    font-family: 'Agency fb';
+
+}
+
 .card {
 
-    background-color: rgba(196, 252, 85, 0.959);
+    background-color: rgba(83, 252, 5, 0.959);
     text-align: center;
 
 }
 
-.imgCarrousel {
+.parrafo-moto {
 
-    width: 100%;
+    color: #e94d1e;
+}
+
+.color-span {
+    background: -webkit-linear-gradient(#cfa3dd, #754ce6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.imgCarrousel {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 99%;
     height: 65vh;
 }
 
@@ -32,7 +51,7 @@ h2 {
 
 table {
 
-    color: #000000;
+    color: #fafafa;
     background-color: rgba(68, 57, 57, 0.418);
 
 }
@@ -63,7 +82,6 @@ p {
     padding: 20px;
     background-color: #7e333385;
     border-radius: 20px;
-    /* Ajusta este valor para cambiar el grado de redondez */
     border: 2px solid #ccc;
 }
 
@@ -90,8 +108,13 @@ p {
 
 
 
-.body {
-    background: linear-gradient(100deg, #1d0ef7d7, #1a0909, #e92020);
+.body-color {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(51, 101, 66, 0.9850315126050421) 100%, rgba(0, 212, 255, 1) 100%);
 }
 
 h1 {
@@ -110,6 +133,8 @@ h3 {
 
 }
 
+
+/*Formulario*/
 * {
 
     margin: 0;
@@ -134,7 +159,7 @@ h3 {
     background: linear-gradient(50deg,
             rgba(40, 42, 55, 1)50%,
             rgba(40, 42, 55, 0.7)),
-        url(../image/bg.jpg);
+        url(../image/bg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
