@@ -10,9 +10,9 @@
     <title>Motos Deportivas</title>
 </head>
 
-<body class="Motos">
+<body class="Motos col-auto">
 
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand text-light mt-2 fw-bold fs-1" href="#"><img src="image/Logo.png" alt="logo"
                     width="70">Metal
@@ -30,7 +30,7 @@
                         <a class="nav-link" href="Formulario.html" target="_blank">Formulario</a>
                     </li>
                     < <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="image/CarritoCompra.png" alt="" width="25">
+                        <a class="nav-link" href="#"><img src="image/CarritoCompra.png" alt="" width="30">
                             <?php echo $totalcantidad;?>Carrito
                         </a>
                         </li>
@@ -39,20 +39,22 @@
             </div>
         </div>
     </nav>
-    <br><br><br>
-    <div class="contenedor opacidad">
-
-        <!-- R15 V4 -->
 
 
-        <center>
+    <!-- R15 V4 -->
+
+    <div class="fondo">
+
+        <section>
 
 
             <img class="img-moto" src="image/R15v4 Red.png" alt="">
             <h2>R15 V4</h2>
             <p class="fw-bold">$ 3.990.000</p>
-            <div class="parrafo-moto">
-                <p class="rectangulo-fondo mt-4 fw-bold text-light ">New R15 V4 es la nueva integrante de
+            <div class="parrafo-moto row justify-content-center">
+                <p class="rectangulo-fondo w-50 mt-4 fw-bold text-light ">New R15 V4 es la nueva
+                    integrante
+                    de
                     la familia Superdeportiva R-World
                     de Yamaha, convirtiéndola en
                     la más avanzada de su segmento por sus elementos de equipamiento, seguridad y tecnología que
@@ -62,13 +64,19 @@
                     gracias a la conexión que tiene con el celular del usuario.</p>
             </div>
             <!-- Contenedor del rectángulo con botones -->
-            <div class="botones-rectangulo">
-                <button type="button" class="btn btn-secondary">Agregar al carrito</button>
-                <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#specsR15V4"
-                    aria-expanded="false" aria-controls="specsR15V4">especificaciones</button>
+            <div class="container">
+                <div class=" botones-rectangulo row justify-content-center">
+                    <div class="col-auto">
+
+                        <button type="button" class="btn btn-secondary">Agregar al carrito</button>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="collapse"
+                            data-bs-target="#specsR15V4" aria-expanded="false"
+                            aria-controls="specsR15V4">especificaciones</button>
+                    </div>
+                </div>
             </div>
 
-        </center>
+        </section>
         <div class="collapse" id="specsR15V4">
             <!-- Tabla de especificaciones técnicas -->
             <h3>Especificaciones Técnicas</h3>
@@ -102,12 +110,13 @@
         <!-- R7 -->
 
 
-        <center>
+        <section>
             <img class="img-moto" src="image/R7 Azul.png" alt="">
             <h2>R7</h2>
             <p class="fw-bold">$ 9.990.000</p>
-            <div>
-                <p class="rectangulo-fondo mt-4 fw-bold text-light">Una superdeportiva de nueva generación con el estilo
+            <div class="parrafo-moto row justify-content-center">
+                <p class="rectangulo-fondo w-50 mt-4 fw-bold text-light">Una superdeportiva de nueva generación con el
+                    estilo
                     legendario de Yamaha
                     que
                     combina un avanzado
@@ -119,13 +128,19 @@
                     excitante rendimiento para su día a día.</p>
             </div>
             <!-- Contenedor del rectángulo con botones -->
-            <div class="botones-rectangulo">
-                <button type="button" class="btn btn-secondary">Agregar al carrito</button>
-                <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#specsR7"
-                    aria-expanded="false" aria-controls="specsR7">especificaciones</button>
+            <div class="container">
+                <div class="botones-rectangulo row justify-content-center">
+                    <div class="col-auto">
+
+                        <button type="button" class="btn btn-secondary">Agregar al carrito</button>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="collapse"
+                            data-bs-target="#specsR7" aria-expanded="false"
+                            aria-controls="specsR7">especificaciones</button>
+                    </div>
+                </div>
             </div>
 
-        </center>
+        </section>
         <div class="collapse" id="specsR7">
             <!-- Tabla de especificaciones técnicas -->
             <h3>Especificaciones Técnicas</h3>
@@ -159,12 +174,13 @@
         <!-- R3A -->
 
 
-        <center>
+        <section>
             <img class="img-moto" src="image/R3A_Azul.png" alt="">
             <h2>R3A</h2>
             <p class="fw-bold">$ 5.990.000</p>
-            <div>
-                <p class="rectangulo-fondo mt-4 fw-bold text-light">Esta superdeportiva ligera presenta una estética
+            <div class="parrafo-moto row justify-content-center">
+                <p class="rectangulo-fondo w-50 mt-4 fw-bold text-light">Esta superdeportiva ligera presenta una
+                    estética
                     completamente renovada de
                     inspiración MotoGP® que la
                     convierte en la 300 más radical tanto en las calles como en circuito. Su nueva carrocería estilizada
@@ -178,13 +194,19 @@
                     mayor confort y control. Escucha la llamada y adéntrate en el Mundo R.</p>
             </div>
             <!-- Contenedor del rectángulo con botones -->
-            <div class="botones-rectangulo">
-                <button type="button" class="btn btn-secondary">Agregar al carrito</button>
-                <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#specsR3A"
-                    aria-expanded="false" aria-controls="specsR3A">especificaciones</button>
+            <div class="container">
+                <div class="botones-rectangulo row justify-content-center">
+                    <div class="col-auto">
+
+                        <button type="button" class="btn btn-secondary">Agregar al carrito</button>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="collapse"
+                            data-bs-target="#specsR3A" aria-expanded="false"
+                            aria-controls="specsR3A">especificaciones</button>
+                    </div>
+                </div>
             </div>
 
-        </center>
+        </section>
         <div class="collapse" id="specsR3A">
             <!-- Tabla de especificaciones técnicas -->
             <h3>Especificaciones Técnicas</h3>

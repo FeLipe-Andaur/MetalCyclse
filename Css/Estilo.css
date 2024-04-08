@@ -15,6 +15,7 @@ nav {
 
 }
 
+
 .card {
 
     background-color: rgba(83, 252, 5, 0.959);
@@ -25,6 +26,7 @@ nav {
 .parrafo-moto {
 
     color: #e94d1e;
+    margin: 0;
 }
 
 .color-span {
@@ -35,6 +37,7 @@ nav {
 
 .imgCarrousel {
     display: block;
+    margin-top: auto;
     margin-left: auto;
     margin-right: auto;
     width: 99%;
@@ -79,6 +82,8 @@ p {
 }
 
 .rectangulo-fondo {
+    align-content: center;
+    text-align: center;
     padding: 20px;
     background-color: #7e333385;
     border-radius: 20px;
@@ -88,16 +93,34 @@ p {
 
 .Motos {
 
-    background-color: #236cca;
+    background-color: #ca2323;
+    margin: 0;
+    padding: 0;
 }
 
-.contenedor {
+.fondo {
 
     background-image: url(../image/fondo_moto.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    position: relative;
+}
 
+.fondo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(146, 26, 26, 0.247);
+}
+
+.fondo section {
+    position: relative;
+    z-index: 1;
+    color: #ffffffb0;
 
 }
 
@@ -109,10 +132,7 @@ p {
 
 
 .body-color {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
+
     background: rgb(2, 0, 36);
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(51, 101, 66, 0.9850315126050421) 100%, rgba(0, 212, 255, 1) 100%);
 }
