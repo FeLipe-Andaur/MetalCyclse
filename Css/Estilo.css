@@ -170,13 +170,11 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* Establecer el mínimo alto del cuerpo como 100% de la altura de la ventana */
     margin: 0;
 }
 
 main {
     flex: 1;
-    /* Hace que el elemento 'main' ocupe todo el espacio restante verticalmente */
 }
 
 
@@ -489,12 +487,10 @@ footer {
     font-size: 1.1rem;
 }
 
-/* Parte inferior del pie de página */
 .footer-bottom {
     width: 100%;
     color: var(--text-color);
     margin-top: 2rem;
-    /* Añadido para ajustar el espacio entre el contenido y el pie de página */
 }
 
 .footer-bottom-wrapper {
@@ -514,4 +510,79 @@ footer {
 .footer-bottom>small {
     font-size: 1rem;
     width: 100%;
+}
+
+/* Accordion  */
+
+#accordionFlushExample {
+    width: 40%; 
+    margin: 0 auto; 
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.accordion-button {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0; 
+    text-align: center;
+    cursor: pointer;
+    font-size: 22px;
+    display: flex; 
+    justify-content: center; 
+}
+
+.accordion-button::before,
+.accordion-button::after {
+    content: ''; 
+    flex-grow: 1; 
+}
+
+.accordion-button:hover {
+    background-color: #0056b3;
+}
+
+.accordion-collapse {
+    padding: 10px 20px;
+    border-top: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+}
+
+
+.img-moto {
+    max-width: 100%;
+    height: auto;
+}
+
+.container-table {
+    overflow-x: auto;
+}
+
+@media (max-width: 576px) {
+    .fw-bold.text-light.rectangulo-fondo {
+        font-size: 0.9rem;
+    }
+}
+
+.img-moto {
+    max-width: 100%;
+    height: auto;
+}
+
+.container-table {
+    overflow-x: auto;
+}
+
+@media (max-width: 576px) {
+    .fw-bold.text-light.rectangulo-fondo {
+        font-size: 0.9rem;
+    }
 }
