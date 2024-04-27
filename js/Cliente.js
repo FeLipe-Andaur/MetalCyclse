@@ -29,17 +29,18 @@ $(document).ready(function () {
                 return false;
             } else {
                 $("#mensaje2").fadeOut();
-                if (email == "" || !expr.test(email)) {
+                if (telefono == "" || telefono.length != 9) {
                     $("#mensaje3").fadeIn();
                     return false;
+
                 } else {
                     $("#mensaje3").fadeOut();
-                    if (telefono == "" || telefono.length != 9) {
-                        $("#mensaje4").fadeIn();
-                        return false;
-                    } else {
-                        $("#mensaje4").fadeOut();
-                    } if (direccion == "") {
+                } if (direccion == "") {
+                    $("#mensaje4").fadeIn();
+                    return false;
+                } else {
+                    $("#mensaje4").fadeOut();
+                    if (email == "" || !expr.test(email)) {
                         $("#mensaje5").fadeIn();
                         return false;
                     } else {
