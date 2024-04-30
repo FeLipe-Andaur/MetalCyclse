@@ -514,9 +514,28 @@ footer {
 
 /* Accordion  */
 
-#accordionFlushExample {
-    width: 40%; 
-    margin: 0 auto; 
+
+#accordionFlushExampleXTZ-125,
+#accordionFlushExampleFZ-S,
+#accordionFlushExampleFZ-25,
+#accordionFlushExampleYZ-250X,
+#accordionFlushExampleTTR-110E,
+#accordionFlushExampleWR-250F,
+#accordionFlushExampleR15,
+#accordionFlushExampleR7,
+#accordionFlushExampleR3A,
+#accordionFlushExampleXRE300,
+#accordionFlushExampleCB500X,
+#accordionFlushExampleMT09,
+#accordionFlushExampleST1200,
+#accordionFlushExampleAfricaTwin,
+#accordionFlushExampleR1300GS ,
+#accordionFlushExampleCygnusRayZR,
+#accordionFlushExampleNMAX,
+#accordionFlushExampleXMAX {
+    width: 40%;
+    margin: 0 auto;
+
 }
 
 .accordion-item {
