@@ -295,60 +295,68 @@
                         <small>© <span id="year"></span> MetalCyclse Inc.</small>
                     </div>
                 </div>
+                <div class="container-Api">
+                    <div class="Api">
+                        <div class="search-box ">
+                            <i class='bx bxs-map'></i>
+                            <input type="text" placeholder="Selecciona tu localidad">
+                            <button class="bx bx-search"></button>
+                        </div>
+
+                        <div class="weather-box">
+                            <div class="box">
+                                <div class="info-weather">
+                                    <div class="weather">
+                                        <img src="image/clear.png" class="weather-icon">
+                                        <p class="temp">0 </p>
+                                        <p class="description">nublado</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="weather-details">
+                            <div class="humidity">
+                                <i class='bx bx-water'></i>
+                                <div class="text">
+                                    <div class="info-humidity">
+                                        <span>0%</span>
+                                        <div>
+                                            <p>humedad</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wind">
+                                <i class='bx bx-wind'></i>
+                                <div class="text">
+                                    <div class="info-wind">
+                                        <span>0Km/h</span>
+                                        <div>
+                                            <p>viento</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="not-found">
+                            <div class="box">
+                                <img src="image/404.png">
+                                <p>Localidad no encontrada</p>
+                            </div>
+
+                        </div>
+                    </div>
     </footer>
     <!--Fin Footer-->
 
-    <!-- Api Clima -->
-    <div class="container-Api">
-        <div class="Api">
-            <div class="search-box ">
-                <i class='bx bxs-map'></i>
-                <input type="text" placeholder="Selecciona tu localidad">
-                <button class="bx bx-search"></button>
-            </div>
 
-            <div class="weather-box">
-                <div class="box">
-                    <div class="info-weather">
-                        <div class="weather">
-                            <img src="image/clear.png" class="weather-icon">
-                            <p class="temp">0 </p>
-                            <p class="description">nublado</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="weather-details">
-                <div class="humidity">
-                    <i class='bx bx-water'></i>
-                    <div class="text">
-                        <div class="info-humidity">
-                            <span>0%</span>
-                            <div>
-                                <p>humedad</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="wind">
-                    <i class='bx bx-wind'></i>
-                    <div class="text">
-                        <div class="info-wind">
-                            <span>0Km/h</span>
-                            <div>
-                                <p>viento</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script>
-            document.getElementById("year").innerHTML = new Date().getFullYear();
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
