@@ -111,7 +111,7 @@ table {
     color: rgb(255, 255, 255);
 }
 
-p {
+.p-moto {
     line-height: 1.5;
     letter-spacing: -0.5px;
     text-align: center;
@@ -214,7 +214,7 @@ h3 {
 .body-formulario {
 
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #555764;
+    background-color: #55645a;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -256,7 +256,7 @@ label {
     margin-bottom: 20px;
 }
 
-input,
+.input,
 textarea {
 
     padding: 17px 14px;
@@ -529,7 +529,7 @@ footer {
 #accordionFlushExampleMT09,
 #accordionFlushExampleST1200,
 #accordionFlushExampleAfricaTwin,
-#accordionFlushExampleR1300GS ,
+#accordionFlushExampleR1300GS,
 #accordionFlushExampleCygnusRayZR,
 #accordionFlushExampleNMAX,
 #accordionFlushExampleXMAX {
@@ -551,18 +551,18 @@ footer {
     color: #000;
     border: none;
     border-radius: 5px;
-    padding: 10px 0; 
+    padding: 10px 0;
     text-align: center;
     cursor: pointer;
     font-size: 22px;
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
 }
 
 .accordion-button::before,
 .accordion-button::after {
-    content: ''; 
-    flex-grow: 1; 
+    content: '';
+    flex-grow: 1;
 }
 
 .accordion-button:hover {
