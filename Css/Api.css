@@ -1,38 +1,16 @@
-/* Media query para teléfonos */
-@media screen and (max-width: 576px) {
-    .container-Api {
-        bottom: 10px;
-        right: 10px;
-    }
+/* Estilos para pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+    /* Estilos específicos para pantallas pequeñas */
 }
 
-@media screen and (max-width: 400px) {
-    .container-Api {
-        width: 90%;
-        /* Ajusta el ancho según sea necesario */
-        right: 0;
-        margin-top: 10px;
-        /* Ajusta el margen superior según sea necesario */
-    }
+/* Estilos para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Estilos específicos para tablets */
 }
 
-
-/* Media query para tabletas */
-@media screen and (min-width: 577px) and (max-width: 992px) {
-    .container-Api {
-        bottom: 15px;
-        right: 15px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .container-Api {
-        width: 90%;
-        /* Ajusta el ancho según sea necesario */
-        right: 0;
-        margin-top: 10px;
-        /* Ajusta el margen superior según sea necesario */
-    }
+/* Estilos para pantallas grandes (escritorio) */
+@media (min-width: 1024px) {
+    /* Estilos específicos para pantallas grandes */
 }
 
 
@@ -49,12 +27,13 @@
     width: 400px;
     right: 20px;
     margin-top: -30px;
-    height: 555px;
+    height: 100px;
     background: rgba(255, 255, 255, .1);
     backdrop-filter: blur(30px);
     border-radius: 16px;
     padding: 20px;
     color: #fff;
+    transition: height .6s ease;
 }
 
 .search-box {
@@ -105,20 +84,19 @@
     cursor: pointer;
 }
 
+.smaller-text {
+    font-size: 20%;
+}
+
 .weather-box {
     text-align: center;
     margin: 40px 0;
 }
 
-
-
-.weather-box img {
-    width: 60%;
-}
-
 .weather-box,
 .weather-details,
 .not-found {
+    overflow: hidden;
     visibility: hidden;
 }
 
@@ -128,6 +106,34 @@
     visibility: visible;
 }
 
+.weather-box .box,
+.not-found .box {
+    transform: translateY(-100%);
+}
+
+.weather-box.active .box,
+.not-found.active .box {
+    transform: translateY(0%);
+    transition: transform 1s ease;
+    transition-delay: .6s;
+}
+
+.weather-box .box .info-weather {
+
+    transform: translateY(-120%);
+}
+
+.container-Api.active .weather-box .box .info-weather,
+.container-Api.active .weather-details .humidity .info-humidity,
+.container-Api.active .weather-details .wind .info-wind {
+
+    transform: translateY(0%);
+    transition: transform 1s ease;
+}
+
+.weather-box img {
+    width: 60%;
+}
 
 .weather-box .temp {
     position: relative;
@@ -162,6 +168,20 @@
     display: flex;
     align-items: center;
     width: 50%;
+    transform: translateY(-100%);
+}
+
+.weather-details.active .humidity,
+.weather-details.active .wind {
+    transform: translateY(0%);
+    transition: transform 1s ease;
+    transition-delay: 1.2s;
+}
+
+.weather-details .humidity .info-humidity,
+.weather-details .wind .info-wind {
+    transform: translateY(-100%);
+    overflow: hidden;
 }
 
 .weather-details .humidity {
@@ -179,15 +199,14 @@
     margin-right: 10px;
 }
 
-.weather-details span {
-    display: inline-block;
-    font-size: 22px;
-    font-weight: 500;
-}
 
 .weather-details p {
     font-size: 14px;
     font-weight: 500;
+}
+
+.weather-details .humidity .info-humidity span {
+    font-size: 18px;
 }
 
 .weather-details .wind span {
@@ -211,4 +230,45 @@
     font-size: 22px;
     font-weight: 500;
     margin-top: 12px;
+}
+
+.city-hide {
+
+    display: none;
+}
+
+#clone-info-weather,
+#clone-info-humidity,
+#clone-info-wind {
+
+    position: absolute;
+    transform: translateY(-100%);
+}
+
+#clone-info-weather .weather {
+
+    transform: translateY(120%);
+    transition: transform 1s ease, opacity 0s;
+    transition-delay: 0s, 2s;
+}
+
+.weather-box:not(.active) #clone-info-weather .weather {
+
+    opacity: 0;
+    transition: 0s;
+}
+
+.active-clone#clone-info-weather .weather {
+    transform: translateY(0%);
+}
+
+#clone-info-humidity span,
+#clone-info-wind span {
+    transform: translateY(100%);
+    transition: transform 1s ease;
+}
+
+.active-clone#clone-info-humidity span,
+.active-clone#clone-info-wind span {
+    transform: translateY(0%);
 }
