@@ -1,17 +1,11 @@
 /* Estilos para pantallas pequeñas (celulares) */
-@media (max-width: 768px) {
-    /* Estilos específicos para pantallas pequeñas */
-}
+@media (max-width: 768px) {}
 
 /* Estilos para tablets */
-@media (min-width: 768px) and (max-width: 1024px) {
-    /* Estilos específicos para tablets */
-}
+@media (min-width: 768px) and (max-width: 1024px) {}
 
 /* Estilos para pantallas grandes (escritorio) */
-@media (min-width: 1024px) {
-    /* Estilos específicos para pantallas grandes */
-}
+@media (min-width: 1024px) {}
 
 
 
@@ -25,8 +19,8 @@
 .container-Api {
     position: absolute;
     width: 400px;
-    right: 20px;
-    margin-top: -30px;
+    right: 0.7vh;
+    margin-top: -23px;
     height: 100px;
     background: rgba(255, 255, 255, .1);
     backdrop-filter: blur(30px);
