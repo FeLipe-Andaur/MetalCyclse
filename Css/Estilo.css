@@ -5,13 +5,15 @@
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 576px) {
-    .secciones {
+
+    .secciones,
+    .embed-responsive {
         text-align: center;
+        width: 100%;
     }
 
     .card {
         margin: 10px;
-        /* Agregar márgenes laterales a las tarjetas en pantallas pequeñas */
     }
 }
 
@@ -19,7 +21,11 @@
 @media (min-width: 576px) and (max-width: 992px) {
     .navbar-brand img {
         width: 50px;
-        /* Reducir el tamaño del logo en pantallas medianas */
+    }
+
+    .embed-responsive {
+        width: 75%;
+        margin: 0 auto;
     }
 }
 
@@ -27,7 +33,18 @@
 @media (min-width: 992px) {
     .card {
         margin-bottom: 20px;
-        /* Aumentar el margen inferior de las tarjetas en pantallas grandes */
+    }
+
+    .embed-responsive {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .parrafo-moto {
+        font-size: 12px;
+        line-height: 1;
     }
 }
 
@@ -52,7 +69,6 @@ nav {
     position: relative;
     overflow: hidden;
     text-align: center;
-
 }
 
 .card:hover {
@@ -61,7 +77,8 @@ nav {
 
 
 .parrafo-moto {
-
+    font-size: 18px;
+    line-height: 1.6;
     color: #000000;
     margin: 0;
 }
@@ -214,7 +231,7 @@ h3 {
 .body-formulario {
 
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #55645a;
+    background-color: #3f4641;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -252,12 +269,11 @@ form {
 label {
 
     font-size: 17px;
-    color: #959AAB;
-    margin-bottom: 20px;
+    color: #ab9595;
+    margin-bottom: 10px;
 }
 
-.input,
-textarea {
+.input-formulario textarea {
 
     padding: 17px 14px;
     background-color: #333646;
@@ -605,4 +621,126 @@ footer {
     .fw-bold.text-light.rectangulo-fondo {
         font-size: 0.9rem;
     }
+}
+
+/* Login */
+
+/* Estilo para el fondo del modal */
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+/* Estilo para el cuerpo del modal */
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.register-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+
+.btn-close {
+    color: #000;
+}
+
+
+.btn {
+    background-color: #007bff;
+
+    color: #fff;
+    border: none;
+}
+
+
+.btn-secondary {
+    background-color: #6c757d;
+
+    color: #fff;
+    border: none;
+}
+
+
+.remember-forgot label {
+    color: #000;
+    display: block;
+    text-align: left;
+}
+
+
+.register-link {
+    color: #5619ff;
+    text-decoration: none;
+}
+
+
+.modal-content,
+.modal-content input[type="email"],
+.modal-content input[type="password"],
+.modal-content .remember-forgot label {
+    color: #000000;
+}
+
+
+.modal-content input[type="email"],
+.modal-content input[type="password"] {
+    width: 300px;
+}
+
+
+.modal-header h2.modal-title {
+    text-align: center;
+    margin: 0 auto;
+    color: #000000;
+}
+
+
+/*Contacto*/
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="number"],
+.modal-content input[type="email"],
+.modal-content textarea {
+    width: 300px;
+}
+
+.modal-content,
+.modal-content input[type="text"],
+.modal-content input[type="number"],
+.modal-content input[type="email"],
+.modal-content textarea {
+    color: #000000;
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+
+.modal-header h2.modal-title {
+    text-align: center;
+    margin: 0 auto;
+    color: #000000;
 }

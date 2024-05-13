@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Almacenamos los datos del clima
+        // Almacena los datos del clima
         weatherData = {
             temperature: Math.round(data.main.temp) + "<span>°C</span>",
             description: data.weather[0].description,
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
             weatherMain: data.weather[0].main
         };
 
-        // Actualizamos la información del clima
+        // Actualiza la información del clima
         updateWeatherInfo();
 
         cityhide.textContent = city;
@@ -53,22 +53,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const weatherIcon = document.querySelector(".weather-icon");
 
-        // Actualizamos el icono del clima
+        // Actualiza el icono del clima
         switch (weatherData.weatherMain) {
             case "Clouds":
-                weatherIcon.src = "image/cloud.png";
+                weatherIcon.src = "../image/cloud.png";
                 break;
             case "Clear":
-                weatherIcon.src = "image/clear.png";
+                weatherIcon.src = "../image/clear.png";
                 break;
             case "Rain":
-                weatherIcon.src = "image/rain.png";
+                weatherIcon.src = "../image/rain.png";
                 break;
             case "Mist":
-                weatherIcon.src = "image/mist.png";
+                weatherIcon.src = "../image/mist.png";
                 break;
             case "Snow":
-                weatherIcon.src = "image/snow.png";
+                weatherIcon.src = "../image/snow.png";
                 break;
             default:
                 weatherIcon.src = "";
