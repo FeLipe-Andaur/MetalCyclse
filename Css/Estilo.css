@@ -422,6 +422,12 @@ footer {
 
 }
 
+.footer-bottom-wrapper {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /* Redes sociales */
 .social-wrapper {
     display: flex;
