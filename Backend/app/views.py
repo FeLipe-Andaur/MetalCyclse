@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
+from administrador.models import Producto
 from .forms import RegistroClienteForm
 
 
@@ -45,35 +46,30 @@ def home(request):
 
 
 def MotoAdventure(request):
-    context = {}
-    return render(request, "app/MotoAdventure.html", context)
-
-
-def Formulario(request):
-    context = {}
-    return render(request, "app/Formulario.html", context)
+    productos = Producto.objects.filter(modelo__tipo__nombre="Moto Adventure")
+    return render(request, "app/MotoAdventure.html", {"productos": productos})
 
 
 def MotoCompeticion(request):
-    context = {}
-    return render(request, "app/MotoCompeticion.html", context)
+    productos = Producto.objects.filter(modelo__tipo__nombre="Moto Competición")
+    return render(request, "app/MotoCompeticion.html", {"productos": productos})
 
 
 def MotoDeportiva(request):
-    context = {}
-    return render(request, "app/MotoDeportiva.html", context)
+    productos = Producto.objects.filter(modelo__tipo__nombre="Moto Deportiva")
+    return render(request, "app/MotoDeportiva.html", {"productos": productos})
 
 
 def MotoScooter(request):
-    context = {}
-    return render(request, "app/MotoScooter.html", context)
+    productos = Producto.objects.filter(modelo__tipo__nombre="Moto Scooter")
+    return render(request, "app/MotoScooter.html", {"productos": productos})
 
 
 def MotoTouring(request):
-    context = {}
-    return render(request, "app/MotoTouring.html", context)
+    productos = Producto.objects.filter(modelo__tipo__nombre="Moto Touring")
+    return render(request, "app/MotoTouring.html", {"productos": productos})
 
 
 def MotoUrbana(request):
-    context = {}
-    return render(request, "app/MotoUrbana.html", context)
+    productos = Producto.objects.filter(modelo__tipo__nombre="Moto Urbana")
+    return render(request, "app/MotoUrbana.html", {"productos": productos})

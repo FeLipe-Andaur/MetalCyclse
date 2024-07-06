@@ -19,11 +19,12 @@ class ModeloMoto(models.Model):
 
 
 class Producto(models.Model):
-    modelo = models.ForeignKey(ModeloMoto, on_delete=models.CASCADE)
+    modelo = models.ForeignKey(ModeloMoto, on_delete=models.PROTECT)
     descripcion = models.TextField()
     precio = models.IntegerField()
     imagen = models.ImageField(upload_to="productos/", null=True, blank=True)
     stock = models.PositiveIntegerField()
+    objects: models.Manager = models.Manager()
 
     def __str__(self):
         return f"{self.modelo} - {self.descripcion}"
