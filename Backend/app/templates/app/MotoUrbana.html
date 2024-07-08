@@ -8,15 +8,19 @@
 <div class="fondo">
     {% for producto in productos %}
     <section>
+        {% if producto.imagen %}
         <img class="img-moto" src="{{ producto.imagen.url }}" alt="{{ producto.modelo.nombre }}">
+        {% else %}
+        <span>Sin imagen</span>
+        {% endif %}
         <h2>{{ producto.modelo.nombre }}</h2>
         <p class="p-moto fw-bold">${{ producto.precio|intcomma }}</p>
         <div class="accordion accordion-flush" id="accordionFlushExample{{ producto.id }}">
             <div class="accordion accordion-flush w-100" id="accordionFlushExample{{ producto.id }}Descripcion"
                 style="border-radius: 10px;">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed text btn-secondary mb-2" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne{{ producto.id }}"
+                    <button class="justify-content-center accordion-button collapsed text btn-secondary mb-2"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne{{ producto.id }}"
                         aria-expanded="false" aria-controls="flush-collapseOne{{ producto.id }}">
                         Descripción
                     </button>
