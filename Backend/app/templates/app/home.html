@@ -21,8 +21,10 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand fs-2" href="#"><img src="{% static 'app/img/Logo.png' %}" alt="logo" width="70">Metal
-                <span class="color-span">Cyclse</span></a>
+            <a class="navbar-brand fs-2" href="#">
+                <img src="{% static 'app/img/Logo.png' %}" alt="logo" width="70">Metal <span
+                    class="color-span">Cyclse</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,12 +36,25 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><img src="{% static 'app/img/CarritoCompra.png' %}" alt=""
-                                width="25">
-                            Carrito</a>
+                                width="25"> Carrito</a>
                     </li>
+                    {% if "usuario" in request.session %}
+                    <li class="nav-item">
+                        <span class="nav-link text-white">{{user}}</span>
+                    </li>
+                    <li class="nav-item">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <button class="btn btn-dark bg-dark nav-link" type="submit" name="action_logout">
+                                <i class="bi bi-box-arrow-right"></i>
+                            </button>
+                        </form>
+                    </li>
+                    {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="#Login" data-bs-toggle="modal">Login</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
@@ -227,21 +242,22 @@
                 <div class="modal-body">
                     <div class="cover-box">
                         <div class="form-box login">
-                            <form action="#">
+                            <form action="#" method="POST">
+                                {% csrf_token %}
                                 <div class="input-box">
                                     <span class="icon"><i class="bi bi-envelope-fill"></i></span>
-                                    <input type="email" required>
+                                    <input type="email" required name="email">
                                     <label style="color: black;">Email</label>
                                 </div>
                                 <div class="input-box">
                                     <span class="icon"><i class="bi bi-lock"></i></span>
-                                    <input type="password" required autocomplete="current-password">
+                                    <input type="password" required name="contraseña" autocomplete="current-password">
                                     <label style="color: black;"">Password</label>
                                 </div>
                                 <div class=" remember-forgot">
                                 </div>
                                 <label style="color: black;"><input type="checkbox">remember me</label>
-                                <button type="submit" class="btn">Login</button>
+                                <button type="submit" class="btn" id="loginUser">Login</button>
                                 <div class="login-register">
                                     <p>Don't have an account? <a href="registro" class="register-link"
                                             target="_blank">Register</a></p>

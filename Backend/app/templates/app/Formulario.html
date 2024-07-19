@@ -17,9 +17,14 @@
 
     <div class="form-content">
         <div class="input-formulario">
-
+            {% if mensaje %}
+            <div class="text-center text-white bg-green py-2 px-10">
+                {{mensaje}}
+            </div>
+            {% endif %}
             <h2>Registro Cliente</h2>
-            <form id="Registro">
+            <form id="Registro" method="POST">
+                {% csrf_token %}
                 <label for="name">Nombre</label>
                 <input type="text" name="name" id="nombre" class="campo">
                 <div id="mensaje1" class="error">Escriba su nombre</div>
@@ -41,7 +46,7 @@
                 <div id="mensaje5" class="error">Escriba su email</div>
 
                 <label for="contraseña">Contraseña</label>
-                <input type="text" name="contraseña" id="contraseña" class="campo">
+                <input type="password" name="contraseña" id="contraseña" class="campo">
                 <div id="mensaje6" class="error">El password debe contener al menos una minúscula, mayúscula, número y
                     un carácter especial. Y 8 carácteres como mínimo.</div>
 
