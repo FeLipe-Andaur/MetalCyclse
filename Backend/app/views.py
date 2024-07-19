@@ -1,24 +1,64 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from .models import Cliente
+from django.views.decorators.csrf import csrf_protect
 from django.http import JsonResponse
 from administrador.models import Producto
-from .forms import RegistroClienteForm
 
 
 # Create your views here.
 
 
 def registro_cliente(request):
-    if request.method == "POST":
-        form = RegistroClienteForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("home")
+    usuarios = Cliente.objects.all()
+    repetido = False
+    if request.method != "POST":
+        return render(request, "app/Formulario.html")
     else:
-        form = RegistroClienteForm()
-    return render(request, "app/Formulario.html", {"form": form})
+        nombre = request.POST["name"]
+        fecha_nacimiento = request.POST["fecha_nacimiento"]
+        telefono = request.POST["telefono"]
+        direccion = request.POST["direccion"]
+        email = request.POST["email"]
+        contraseña = request.POST["contraseña"]
+
+        for user in usuarios:
+            if user.email == email:
+                repetido = True
+
+        if repetido:
+            repetido = False
+            mensaje = "Registro ya existe."
+            context = {"mensaje": mensaje}
+            return render(request, "app/formulario.html", context)
+
+        elif (
+            nombre
+            and fecha_nacimiento
+            and telefono
+            and direccion
+            and email
+            and contraseña
+        ):
+            usuario = Cliente(
+                nombre=nombre,
+                fecha_nacimiento=fecha_nacimiento,
+                telefono=telefono,
+                direccion=direccion,
+                email=email,
+                contraseña=contraseña,
+            )
+            usuario.save()
+            mensaje = "Registro exitoso"
+            context = {"mensaje": mensaje}
+            return render(request, "app/formulario.html", context)
+        else:
+            mensaje = "Usuario o contraseña incorrecta"
+            context = {"mensaje": mensaje}
+            return render(request, "app/formulario.html", context)
 
 
+@csrf_protect
 def login_view(request):
     if request.method == "POST":
         email = request.POST.get("email")
@@ -35,14 +75,44 @@ def login_view(request):
     return JsonResponse({"success": False, "error": "Método no permitido"})
 
 
+@csrf_protect
 def logout_view(request):
     logout(request)
     return redirect("home")
 
 
+@csrf_protect
+def logout(request):
+    del request.session["usuario"]
+    return redirect("home")
+
+
+@csrf_protect
 def home(request):
-    context = {}
-    return render(request, "app/home.html", context)
+    if request.method == "POST":
+        if "action_logout" in request.POST:
+            del request.session["usuario"]
+            return render(request, "app/home.html")
+        else:
+            usuarios = Cliente.objects.all()
+            email = request.POST["email"]
+            contraseña = request.POST["contraseña"]
+
+            for usuario in usuarios:
+                if usuario.email == email and usuario.contraseña == contraseña:
+                    mensaje = "Usuario logueado correctamente"
+                    request.session["usuario"] = usuario.nombre
+                    context = {"mensaje": mensaje, "user": usuario.nombre}
+                    return render(request, "app/home.html", context)
+            mensaje = "Correo o password incorrecto"
+            context = {"mensaje": mensaje}
+            return render(request, "app/home.html", context)
+    else:
+        context = {}
+        if "usuario" in request.session:
+            user = request.session["usuario"]
+            context = {"user": user}
+        return render(request, "app/home.html", context)
 
 
 def MotoAdventure(request):

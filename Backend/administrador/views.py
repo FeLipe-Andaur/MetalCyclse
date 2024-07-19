@@ -6,11 +6,6 @@ from .models import Producto
 from .forms import ProductoForm
 
 
-def test(request):
-    context = {}
-    return render(request, "administrador/test.html", context)
-
-
 @login_required(login_url="/administrador/accounts/login/")
 def menu(request):
     context = {}
